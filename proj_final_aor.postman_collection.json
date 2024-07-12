@@ -1,0 +1,3819 @@
+{
+	"info": {
+		"_postman_id": "35594613-4fdc-429f-8dcd-2ef24a1629f5",
+		"name": "proj_final_aor",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32787585",
+		"_collection_link": "https://projfinalaor.postman.co/workspace/proj_final_aor-Workspace~9575fdce-2d82-4713-82db-1c8309fbd3b4/collection/32787585-35594613-4fdc-429f-8dcd-2ef24a1629f5?action=share&source=collection_link&creator=32787585"
+	},
+	"item": [
+		{
+			"name": "Supplier",
+			"item": [
+				{
+					"name": "Register",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "1db4afd7-06cf-4a63-9854-0f1a020ea3e5",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Desdfsdv\",\r\n    \"contact\":\"123456111\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}/suppliers/",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"suppliers",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}/suppliers/",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"suppliers",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "1db4afd7-06cf-4a63-9854-0f1a020ea3e5",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseurl}}/suppliers/search?name=d",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"suppliers",
+								"search"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "d"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}/suppliers/update?id=1&contact=teste",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"suppliers",
+								"update"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								},
+								{
+									"key": "contact",
+									"value": "teste"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "register",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"pm.test(\"Successful POST request\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([201,202]);\r",
+									"});\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"emilia@gmail.com\",\r\n    \"password\": \"Password1234%\",\r\n    \"confirmPassword\" : \"Password1234%\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}/users/register",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"users",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "confirmAccount",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "tokenConfirmation",
+								"value": "066b2f24-d688-4e1a-bfca-6e1873f3ccec"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Mariso\",\r\n    \"lastName\": \"Oliveira\",\r\n    \"nickname\": \"msdfqwaryf\",\r\n    \"biography\": \"Joana é uma engenheira de hardware especializada em aceleração de IA, com vasta experiência em desenvolvimento de sistemas embarcados e otimização de arquiteturas de computação.\"\r\n   \r\n  \r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}/users/confirm-account?lab=COIMBRA",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"users",
+								"confirm-account"
+							],
+							"query": [
+								{
+									"key": "lab",
+									"value": "COIMBRA"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"joana@gmail.com\",\r\n    \"password\": \"Password1234%\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}/users/login",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "775cbc5e-be1d-4e07-9980-ffbf319a3516"
+							}
+						],
+						"url": {
+							"raw": "{{baseurl}}/users/logout",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"users",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "recoveryPassword",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "email",
+								"value": "gdfb@gmail.com"
+							}
+						],
+						"url": {
+							"raw": "{{baseurl}}/users/recovery-password",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"users",
+								"recovery-password"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "vania11@hotmail.com",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "changePassword",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "resetPassToken",
+								"value": "62b04678-3be3-4c18-898a-6f9c995a3640"
+							}
+						],
+						"url": {
+							"raw": "{{baseurl}}/users/change-password?password=Password12345_&confirmPassword=Password12345_",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"users",
+								"change-password"
+							],
+							"query": [
+								{
+									"key": "password",
+									"value": "Password12345_"
+								},
+								{
+									"key": "confirmPassword",
+									"value": "Password12345_"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateUser",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "5a674750-73b4-4a3f-b573-a3e2d251e989"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"vanisasasdasgmbbbbs\",\r\n    \"lab\":{\r\n        \"name\":\"PORTO\"\r\n    },\r\n    \"photo\": \"rwererwewerer\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}/users/2",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"users",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getUser",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "fe55d6bf-3f77-4882-bc7f-b1294301ea1b"
+							}
+						],
+						"url": {
+							"raw": "{{baseurl}}/users/4",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"users",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Projects Count",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "c3a067b4-7248-48fe-b267-19b67f54a441"
+							}
+						],
+						"url": {
+							"raw": "{{baseurl}}/users/:id/projects/count",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"users",
+								":id",
+								"projects",
+								"count"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateBiography",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "5a674750-73b4-4a3f-b573-a3e2d251e989"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "bihoh ksbfkasdb kabsjkfbadjk ksbdfksjdfksjdf",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}/users/:userId/biography",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"users",
+								":userId",
+								"biography"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "uploadPhoto",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "3eef149f-3a4e-4bf3-9ab8-a6a56242bfe0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "photo",
+									"type": "file",
+									"src": "/C:/Users/vsgm1/OneDrive/Área de Trabalho/imagem.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://localhost:8443/project_backend/upload",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8443",
+							"path": [
+								"project_backend",
+								"upload"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "filterUsers",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "393ae89d-7fa6-4a60-b031-85fcb8a04197",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseurl}}/users/filterByName?prefix=m",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"users",
+								"filterByName"
+							],
+							"query": [
+								{
+									"key": "prefix",
+									"value": "m"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getUserById",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "dedb39fe-7108-467f-b981-8d76578abb04",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseurl}}/users/1",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"users",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Project Status",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "096e94c9-3e72-49d1-b61d-2c12cdd21d54",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseurl}}/users/profile/:userId/project/:projectId/status",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"users",
+								"profile",
+								":userId",
+								"project",
+								":projectId",
+								"status"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "1"
+								},
+								{
+									"key": "projectId",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateBiography",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "dedb39fe-7108-467f-b981-8d76578abb04",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"biography\": \"Sou João Silva, engenheiro de software e empreendedor nascido em Coimbra  \"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}/users/1/biography",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"users",
+								"1",
+								"biography"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Resource",
+			"item": [
+				{
+					"name": "Register",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([201, 202]);\r",
+									"});\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "1d05d4ae-3ca2-4c27-ae00-72cf49987b50",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Rato TOP\",\r\n    \"description\":\"Rato Wireless TOP\",\r\n    \"type\":\"MATERIAL\",\r\n    \"brand\":\"Logitech\",\r\n    \"sourceId\":\"l7412\",\r\n    \"photo\": null,\r\n    \"suppliers\": [\r\n        { \r\n            \"name\":\"Worten\",\r\n            \"contact\": \"123456789\"\r\n        }\r\n    ] \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}/resources/",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"resources",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\":\"MATERIAL\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}/resources/:id",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"resources",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Supplier",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}/resources/:id/supplier",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"resources",
+								":id",
+								"supplier"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}/resources/?name=desc",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"resources",
+								""
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "desc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}/resources/search?search=rec",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"resources",
+								"search"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "rec"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Brands",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}/resources/brands",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"resources",
+								"brands"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Filter",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}/resources/filter?sort=desc&supplier=4",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"resources",
+								"filter"
+							],
+							"query": [
+								{
+									"key": "sort",
+									"value": "desc"
+								},
+								{
+									"key": "supplier",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Project",
+			"item": [
+				{
+					"name": "Register",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Successful POST request\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([201, 202]);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "fe26b209-d2ce-4826-85ab-c183fd70df84"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Novo p1rojezzzzt1o zz1cccc1i11a1 ezm pzz1a1111inveis1 1szo1larxe1s1\",\r\n    \"description\":\"Lorem ipsum dolor sit amet, fgh3consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\",\r\n    \"keywords\":\"lógica, logaritmo\",\r\n    \"needs\": \"parafusos\",\r\n    \"maxMembers\": 4,\r\n    \"lab\": \r\n        { \"name\":\"PORTO\"}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}/projects/register",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"projects",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}/projects/?order=asc&vacancies=true&state=100",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"projects",
+								""
+							],
+							"query": [
+								{
+									"key": "order",
+									"value": "asc"
+								},
+								{
+									"key": "vacancies",
+									"value": "true"
+								},
+								{
+									"key": "state",
+									"value": "100"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search By Name",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}/projects/search?name=d&order=desc&state=1&orderByVacancies=false",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"projects",
+								"search"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "d"
+								},
+								{
+									"key": "order",
+									"value": "desc"
+								},
+								{
+									"key": "state",
+									"value": "1"
+								},
+								{
+									"key": "orderByVacancies",
+									"value": "false"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "By Id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}/projects/1",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"projects",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Count",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}/projects/count?state=200",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"projects",
+								"count"
+							],
+							"query": [
+								{
+									"key": "state",
+									"value": "200"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Count By Keyword",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}/projects/count?keyword=Inteligência Artificial&state=1",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"projects",
+								"count"
+							],
+							"query": [
+								{
+									"key": "keyword",
+									"value": "Inteligência Artificial"
+								},
+								{
+									"key": "state",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Count By Search",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}/projects/count?search=d",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"projects",
+								"count"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "d"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "By Keyword",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}/projects/keyword/:keyword?order=as",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"projects",
+								"keyword",
+								":keyword"
+							],
+							"query": [
+								{
+									"key": "order",
+									"value": "as"
+								}
+							],
+							"variable": [
+								{
+									"key": "keyword",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Keywords",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}/projects/keywords",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"projects",
+								"keywords"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search Keywords",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}/projects/keywords/search?keyword=ro",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"projects",
+								"keywords",
+								"search"
+							],
+							"query": [
+								{
+									"key": "keyword",
+									"value": "ro"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Resources From a Project",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "e006de9a-54b1-4ff6-9aa2-94f3156ec9b1",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseurl}}/projects/:id/resources",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"projects",
+								":id",
+								"resources"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "13"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Users Available",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "fcb7d83c-c22d-4333-ada2-1e4e4506cf9b",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseurl}}/projects/:id/users/available?name=zé",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"projects",
+								":id",
+								"users",
+								"available"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "zé"
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Candidates",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "d16632d8-06c5-478a-b38e-8d6752d41a4b",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseurl}}/projects/:id/candidates",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"projects",
+								":id",
+								"candidates"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "13"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "State",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "stateId",
+								"value": "500"
+							},
+							{
+								"key": "token",
+								"value": "3b1f5a60-1ec7-49d4-bb09-f2aec27d584b",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseurl}}/projects/:id/state",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"projects",
+								":id",
+								"state"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Description",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "description",
+								"value": "Nova descrição"
+							},
+							{
+								"key": "token",
+								"value": "e104f535-4643-4985-9a8a-dc9c1ba78197",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseurl}}/projects/:id/description",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"projects",
+								":id",
+								"description"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "13"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Resource",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "quantity",
+								"value": "3"
+							},
+							{
+								"key": "token",
+								"value": "0f1e58e1-9c48-4aae-bd10-ac1491b5249a",
+								"type": "text"
+							},
+							{
+								"key": "resourceId",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}/projects/:id/resource",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"projects",
+								":id",
+								"resource"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Skill",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "skillId",
+								"value": "2"
+							},
+							{
+								"key": "token",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseurl}}/projects/:id/skill",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"projects",
+								":id",
+								"skill"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "13"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Skill",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "skillId",
+								"value": "2"
+							},
+							{
+								"key": "token",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseurl}}/projects/:id/skill",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"projects",
+								":id",
+								"skill"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "13"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Keyword",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "keyword",
+								"value": "adfdfad,kggjgkg,hfjf"
+							},
+							{
+								"key": "token",
+								"value": "66b94dec-8d51-4d8d-9ef6-9457b62661c0",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseurl}}/projects/:id/keyword/add",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"projects",
+								":id",
+								"keyword",
+								"add"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove Keyword",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "keyword",
+								"value": "keyword matemática"
+							},
+							{
+								"key": "token",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseurl}}/projects/:id/keyword/remove",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"projects",
+								":id",
+								"keyword",
+								"remove"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove User",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "2b259c64-5cd6-4f3f-98f0-e87acadd0220",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseurl}}/projects/:id/user/:userId/remove",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"projects",
+								":id",
+								"user",
+								":userId",
+								"remove"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "4"
+								},
+								{
+									"key": "userId",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Candidate",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "d16632d8-06c5-478a-b38e-8d6752d41a4b",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseurl}}/projects/:projectId/user/:userId/add/:userType",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"projects",
+								":projectId",
+								"user",
+								":userId",
+								"add",
+								":userType"
+							],
+							"variable": [
+								{
+									"key": "projectId",
+									"value": "13"
+								},
+								{
+									"key": "userId",
+									"value": "1"
+								},
+								{
+									"key": "userType",
+									"value": "CANDIDATE"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Collaborator",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "e21c1e1d-e2fe-4529-b4ad-fd22fccf9204"
+							}
+						],
+						"url": {
+							"raw": "{{baseurl}}/projects/:id/user/:userId/add/:userType",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"projects",
+								":id",
+								"user",
+								":userId",
+								"add",
+								":userType"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "4"
+								},
+								{
+									"key": "userId",
+									"value": "2"
+								},
+								{
+									"key": "userType",
+									"value": "COLLABORATOR"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Manager",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}/projects/:id/user/:userId/add/:userType",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"projects",
+								":id",
+								"user",
+								":userId",
+								"add",
+								":userType"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								},
+								{
+									"key": "userId",
+									"value": "3"
+								},
+								{
+									"key": "userType",
+									"value": "MANAGER"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Approve Candidate",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "0f89ee75-0df4-454a-a528-4e3a2e13a189",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseurl}}/projects/:id/user/:userId/approve/:userType",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"projects",
+								":id",
+								"user",
+								":userId",
+								"approve",
+								":userType"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "13"
+								},
+								{
+									"key": "userId",
+									"value": "1"
+								},
+								{
+									"key": "userType",
+									"value": "COLLABORATOR"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User Type",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "680fb19e-4190-48ba-8778-60bf7ce09c6b",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseurl}}/projects/:id/user/:userId/update/:userType",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"projects",
+								":id",
+								"user",
+								":userId",
+								"update",
+								":userType"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								},
+								{
+									"key": "userId",
+									"value": "2"
+								},
+								{
+									"key": "userType",
+									"value": "COLLABORATOR"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Activities",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "34af96dc-42dd-4a1d-bb7c-d129a60ac044",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseurl}}/projects/:id/activity/all",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"projects",
+								":id",
+								"activity",
+								"all"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "13"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getProjectsOfaUser",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "096e94c9-3e72-49d1-b61d-2c12cdd21d54"
+							}
+						],
+						"url": {
+							"raw": "{{baseurl}}/projects/user/:userId?order=state",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"projects",
+								"user",
+								":userId"
+							],
+							"query": [
+								{
+									"key": "order",
+									"value": "state"
+								}
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getProjectsOfaUser Copy",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "096e94c9-3e72-49d1-b61d-2c12cdd21d54"
+							}
+						],
+						"url": {
+							"raw": "{{baseurl}}/projects/:userId/info/full",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"projects",
+								":userId",
+								"info",
+								"full"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getprojets osuser",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "02671df6-0f21-4522-8100-5e85c188b853",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseurl}}/projects/user/:userId/info",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"projects",
+								"user",
+								":userId",
+								"info"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Lab",
+			"item": [
+				{
+					"name": "All",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}/labs/",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"labs",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Skill",
+			"item": [
+				{
+					"name": "createSkill",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "27b68fc9-cc1d-4cfa-b7b6-3ba6aab8f266"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n    \"name\": \"wererbmvnvbbner\",\r\n    \"type\": \"FERRAMENTAS\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}/skills/new-skill",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"skills",
+								"new-skill"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addSkilltoUser",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "2b0b058b-c318-4412-9e21-c75459c9f847"
+							}
+						],
+						"url": {
+							"raw": "{{baseurl}}/skills/associate-user?userId=2&skillId=11",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"skills",
+								"associate-user"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "2"
+								},
+								{
+									"key": "skillId",
+									"value": "11"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "softDeleteSkill",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "5697bb8a-70be-45aa-a9e2-8a2be8586d7f"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}/skills/softDelete-user?userId=1&skillId=4",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"skills",
+								"softDelete-user"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "1"
+								},
+								{
+									"key": "skillId",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAll",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "c3a067b4-7248-48fe-b267-19b67f54a441"
+							}
+						],
+						"url": {
+							"raw": "{{baseurl}}/skills/",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"skills",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "userskills",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "dedb39fe-7108-467f-b981-8d76578abb04"
+							}
+						],
+						"url": {
+							"raw": "{{baseurl}}/skills/user/:userId",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"skills",
+								"user",
+								":userId"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All Not Associated With A Project",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "34af96dc-42dd-4a1d-bb7c-d129a60ac044"
+							}
+						],
+						"url": {
+							"raw": "{{baseurl}}/skills/project/:projectId/not-associated",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"skills",
+								"project",
+								":projectId",
+								"not-associated"
+							],
+							"variable": [
+								{
+									"key": "projectId",
+									"value": "13"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Interest",
+			"item": [
+				{
+					"name": "new-interest",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "66feb348-c0a0-47ea-be8e-ef0023e2ad2c"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"backend\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}/interests/new",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"interests",
+								"new"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addInterestTOUser",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "b6944be2-47bd-4c1d-9b7a-e06b4ece4d17"
+							}
+						],
+						"url": {
+							"raw": "{{baseurl}}/interests/associate-user?userId=2&interestId=4",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"interests",
+								"associate-user"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "2"
+								},
+								{
+									"key": "interestId",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "softDeleteInterest",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "18968f78-269e-4440-bf1f-64eaac07a339"
+							}
+						],
+						"url": {
+							"raw": "{{baseurl}}/interests/1/users/1/soft-delete",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"interests",
+								"1",
+								"users",
+								"1",
+								"soft-delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAll",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "38d57176-cd62-4840-8753-7fbc32e69910"
+							}
+						],
+						"url": {
+							"raw": "{{baseurl}}/interests/",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"interests",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getInterestByUser",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "2322b6f1-edee-4fa0-8abe-048788793bab"
+							}
+						],
+						"url": {
+							"raw": "{{baseurl}}/interests/:userId",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"interests",
+								":userId"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Messages",
+			"item": [
+				{
+					"name": "newMessage",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "717edfe5-0317-42cf-8791-41c0f198e225"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"receiver\": {\r\n        \"id\": \"4\"\r\n    },\r\n    \"content\": \"Ola. comfgghfghf estgfjfgjas?\",\r\n    \"subject\": \"enviada agora\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}/messages/send",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"messages",
+								"send"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getMessagesBetweenTwoUsers",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "fe26b209-d2ce-4826-85ab-c183fd70df84"
+							}
+						],
+						"url": {
+							"raw": "{{baseurl}}/messages/2?page=5",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"messages",
+								"2"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "sendMessageToCHat",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "fa147f68-a330-4f57-9169-26d70744affd"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"content\": \"Tarefa 2 executada\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}/messages/send/:project_id",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"messages",
+								"send",
+								":project_id"
+							],
+							"variable": [
+								{
+									"key": "project_id",
+									"value": "17"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getMessagesProjectChat",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "fa147f68-a330-4f57-9169-26d70744affd"
+							}
+						],
+						"url": {
+							"raw": "{{baseurl}}/messages/project/:project_id",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"messages",
+								"project",
+								":project_id"
+							],
+							"variable": [
+								{
+									"key": "project_id",
+									"value": "17"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getListUsersWithMessages",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "399f6d50-f11f-4f89-9de1-8c2d30b196f5",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseurl}}/messages/users",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"messages",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getPageCount",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "03bb0526-c7d0-42bd-aa8c-3727dd412682",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseurl}}/messages/:userId/pageCount",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"messages",
+								":userId",
+								"pageCount"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "markAsRead",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "fe26b209-d2ce-4826-85ab-c183fd70df84",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseurl}}/messages/1",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"messages",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Notifications",
+			"item": [
+				{
+					"name": "sendNotificationToProjectGroup",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "740db86e-d00c-4558-a2f8-1f716d95eb8d"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\": \"Prokect numero 1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}/notifications/project/0",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"notifications",
+								"project",
+								"0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getnotifByUserId",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "bcd07585-1338-43f3-a5d7-03b441488ec2"
+							}
+						],
+						"url": {
+							"raw": "{{baseurl}}/notifications/:userId?page=4",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"notifications",
+								":userId"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "4"
+								}
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "markAsRead",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "14bc5ff9-9e85-4f45-af54-5852724f93ec"
+							}
+						],
+						"url": {
+							"raw": "{{baseurl}}/notifications/:notificationId",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"notifications",
+								":notificationId"
+							],
+							"variable": [
+								{
+									"key": "notificationId",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getUnread",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "c9bad56e-dbda-46a1-b843-deea38c26761"
+							}
+						],
+						"url": {
+							"raw": "{{baseurl}}/notifications/unread",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"notifications",
+								"unread"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pageCount",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "bcd07585-1338-43f3-a5d7-03b441488ec2",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseurl}}/notifications/pageCount",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"notifications",
+								"pageCount"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "notificationsList",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "50ba88fa-e425-42d5-a9de-1bf87f4ef88f",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseurl}}/notifications/unread/:userId",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"notifications",
+								"unread",
+								":userId"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "markAllAsOpen",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "4dffd61a-35f7-411b-ae26-38134f243ca7",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseurl}}/notifications/markAllAsOpen",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"notifications",
+								"markAllAsOpen"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getNumberNotificationsOpen",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "85b004af-6f41-4c52-8773-c5876889d99e",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseurl}}/notifications/open",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"notifications",
+								"open"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Settings",
+			"item": [
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "227d91fb-77fe-47c0-aa60-cf6fa0879e3c",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n    \"maxUsersPerProject\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}/settings/",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"settings",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "b17cbdaf-9ac2-4be1-bb37-a3930acaac50",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseurl}}/settings/",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"settings",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "valueSessionTimeout",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "8d6925bb-e1dd-4b6a-a6da-3a71ffd25e46",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseurl}}/settings/session-timeout",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"settings",
+								"session-timeout"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Task",
+			"item": [
+				{
+					"name": "newTask",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "41fd497c-f436-495f-8d9c-98e0a6b56999",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"task\": {\r\n    \"title\": \"Tarefa ooooooooooooooo\",\r\n    \"description\": \"Descrição da tarefa\",\r\n    \"additionalExecutors\": \"Outros executantes\",\r\n    \"deadline\": \"2024-07-01T00:00:00\",\r\n    \"startDate\": \"2024-06-30T00:00:00\",\r\n    \"priorityId\": 20\r\n  },\r\n  \"tasksIdList\": [2,3]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}/project/1/add-task",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"project",
+								"1",
+								"add-task"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getTasksFromProject",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "6972d988-435d-459a-9889-6873ead28ae3",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseurl}}/project/1/tasks",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"project",
+								"1",
+								"tasks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getMinimalInfoTasks",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "df10a927-52c0-474c-b3c7-abddc8bf7c8b",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseurl}}/project/1/tasks-info",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"project",
+								"1",
+								"tasks-info"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "dependencyTaks",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "df10a927-52c0-474c-b3c7-abddc8bf7c8b",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[1, 2]\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}/project/:projectId/:taskId/dependent-task",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"project",
+								":projectId",
+								":taskId",
+								"dependent-task"
+							],
+							"variable": [
+								{
+									"key": "projectId",
+									"value": "1"
+								},
+								{
+									"key": "taskId",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateTaskStatus",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "df10a927-52c0-474c-b3c7-abddc8bf7c8b",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}/project/:projectId/:taskId/update-status?status=20",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"project",
+								":projectId",
+								":taskId",
+								"update-status"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "20"
+								}
+							],
+							"variable": [
+								{
+									"key": "projectId",
+									"value": "1"
+								},
+								{
+									"key": "taskId",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "soft-delete",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "df10a927-52c0-474c-b3c7-abddc8bf7c8b",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseurl}}/project/:projectId/:taskId/soft-delete",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"project",
+								":projectId",
+								":taskId",
+								"soft-delete"
+							],
+							"variable": [
+								{
+									"key": "projectId",
+									"value": "1"
+								},
+								{
+									"key": "taskId",
+									"value": "9"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-task",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "6972d988-435d-459a-9889-6873ead28ae3",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"task\": {\r\n    \"title\": \"N1111xcvxc111\",\r\n    \"description\": \"Descrição da nova tarefa\",\r\n    \"priorityId\": 30,\r\n    \"owner\": {\r\n      \"id\": 3 // ID do proprietário da tarefa\r\n    }\r\n  },\r\n  \"tasksIdList\": [2] // Lista de IDs das tarefas relacionadas, se houver alguma\r\n}\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}/project/:projectId/:taskId/",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"project",
+								":projectId",
+								":taskId",
+								""
+							],
+							"variable": [
+								{
+									"key": "projectId",
+									"value": "1"
+								},
+								{
+									"key": "taskId",
+									"value": "16"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getTaskInfo",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "df10a927-52c0-474c-b3c7-abddc8bf7c8b",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseurl}}/project/:projectId/tasks/:taskId",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"project",
+								":projectId",
+								"tasks",
+								":taskId"
+							],
+							"variable": [
+								{
+									"key": "projectId",
+									"value": "1"
+								},
+								{
+									"key": "taskId",
+									"value": "27"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getTasksOrderByDate",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "6972d988-435d-459a-9889-6873ead28ae3",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseurl}}/project/1/tasks/order",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"project",
+								"1",
+								"tasks",
+								"order"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Statistics",
+			"item": [
+				{
+					"name": "All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}/statistics/",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"statistics",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All Copy",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "76450f40-e575-4d5c-9e8c-7a8396244a65",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseurl}}/statistics/generate-pdf",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"statistics",
+								"generate-pdf"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseurl",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
